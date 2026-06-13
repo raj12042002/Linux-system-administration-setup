@@ -1,0 +1,1346 @@
+## Project: Linux Server Monitoring & Automation
+
+This is a real-world **Linux Administrator / DevOps / Data Center / NOC Engineer** project.
+
+---
+
+# 1. Project Overview (English)
+
+The objective of this project is to automate Linux server monitoring and reduce downtime through proactive alerting and performance analysis.
+
+The system continuously monitors:
+
+* CPU Utilization
+* Memory Usage
+* Disk Usage
+* Network Health
+* Process Status
+* Application Availability
+* Service Uptime
+
+Alerts are automatically generated when thresholds are exceeded.
+
+Benefits:
+
+* Reduced downtime
+* Faster incident response
+* Better resource utilization
+* Improved system reliability
+* Lower operational cost
+
+---
+
+# 2. Project Overview (Hinglish)
+
+Is project ka main objective Linux servers ko continuously monitor karna hai.
+
+System automatically check karta hai:
+
+* CPU usage
+* RAM usage
+* Disk utilization
+* Running services
+* Network status
+* Application health
+
+Agar koi issue detect hota hai to email ya alert generate hota hai.
+
+Result:
+
+* Downtime kam hota hai
+* Server performance improve hoti hai
+* Manual monitoring effort reduce hota hai
+
+---
+
+# 3. Architecture
+
+```text
++---------------------+
+| Linux Servers       |
++----------+----------+
+           |
+           v
++---------------------+
+| Python Monitoring   |
+| Script              |
++----------+----------+
+           |
+           v
++---------------------+
+| Log Collection      |
++----------+----------+
+           |
+           v
++---------------------+
+| Alert Engine        |
++----------+----------+
+           |
+    +------+------+
+    |             |
+    v             v
+Email Alert   Dashboard
+
+```
+
+---
+
+# 4. Linux File System Architecture
+
+```text
+/
+
+├── bin
+├── boot
+├── dev
+├── etc
+├── home
+├── opt
+├── proc
+├── root
+├── run
+├── srv
+├── tmp
+├── usr
+├── var
+```
+
+---
+
+# 5. File System Management Commands
+
+## Create Directory
+
+```bash
+mkdir monitoring
+```
+
+## Create Nested Directories
+
+```bash
+mkdir -p monitoring/logs/reports
+```
+
+## Show Current Path
+
+```bash
+pwd
+```
+
+## List Files
+
+```bash
+ls -la
+```
+
+---
+
+# 6. Permissions Management
+
+View Permissions
+
+```bash
+ls -l
+```
+
+Example
+
+```text
+-rwxr-xr-x
+```
+
+Meaning
+
+```text
+Owner   = rwx
+Group   = r-x
+Others  = r-x
+```
+
+Change Permission
+
+```bash
+chmod 755 script.sh
+```
+
+---
+
+# 7. Ownership Management
+
+Change Owner
+
+```bash
+chown admin:devops file.txt
+```
+
+Verify
+
+```bash
+ls -l
+```
+
+---
+
+# 8. Hard Link
+
+```bash
+ln source.txt hardlink.txt
+```
+
+---
+
+# 9. Soft Link
+
+```bash
+ln -s source.txt symlink.txt
+```
+
+---
+
+# 10. Python Monitoring Script
+
+```python
+import psutil
+import socket
+
+cpu = psutil.cpu_percent()
+
+memory = psutil.virtual_memory().percent
+
+disk = psutil.disk_usage('/').percent
+
+host = socket.gethostname()
+
+print("Host:", host)
+
+print("CPU:", cpu)
+
+print("Memory:", memory)
+
+print("Disk:", disk)
+```
+
+Output
+
+```text
+Host: linux01
+
+CPU: 15.5
+
+Memory: 62.3
+
+Disk: 45.1
+```
+
+---
+
+# 11. Advanced Monitoring Script
+
+```python
+import psutil
+import datetime
+
+cpu = psutil.cpu_percent()
+
+memory = psutil.virtual_memory().percent
+
+disk = psutil.disk_usage('/').percent
+
+now = datetime.datetime.now()
+
+log = f"{now} CPU:{cpu} MEM:{memory} DISK:{disk}"
+
+print(log)
+
+with open(
+    "monitor.log",
+    "a"
+) as f:
+
+    f.write(log + "\n")
+```
+
+---
+
+# 12. Bash Monitoring Script
+
+```bash
+#!/bin/bash
+
+echo "CPU Usage"
+
+top -bn1 | grep Cpu
+
+echo "Memory"
+
+free -m
+
+echo "Disk"
+
+df -h
+```
+
+Run
+
+```bash
+chmod +x monitor.sh
+
+./monitor.sh
+```
+
+---
+
+# 13. Service Monitoring Script
+
+```bash
+#!/bin/bash
+
+systemctl is-active nginx
+
+if [ $? -eq 0 ]
+
+then
+
+echo "Nginx Running"
+
+else
+
+echo "Nginx Down"
+
+fi
+```
+
+---
+
+# 14. Cron Automation
+
+Edit Cron
+
+```bash
+crontab -e
+```
+
+Run every 5 minutes
+
+```bash
+*/5 * * * * /home/admin/monitor.sh
+```
+
+Benefits:
+
+* Automated monitoring
+* No manual intervention
+
+---
+
+# 15. Email Alert Script
+
+```python
+import smtplib
+
+server = smtplib.SMTP(
+    "smtp.company.com",
+    25
+)
+
+message = "Critical CPU Usage"
+
+server.sendmail(
+    "monitor@company.com",
+    "admin@company.com",
+    message
+)
+```
+
+---
+
+# 16. SQL Database for Monitoring
+
+Create Table
+
+```sql
+CREATE TABLE server_metrics(
+
+id INT PRIMARY KEY,
+
+hostname VARCHAR(50),
+
+cpu FLOAT,
+
+memory FLOAT,
+
+disk FLOAT,
+
+created_at TIMESTAMP
+
+);
+```
+
+Insert Data
+
+```sql
+INSERT INTO server_metrics
+VALUES
+(
+1,
+'linux01',
+25.5,
+60.1,
+40.2,
+NOW()
+);
+```
+
+---
+
+# 17. Dashboard Analytics Query
+
+Average CPU
+
+```sql
+SELECT
+
+AVG(cpu)
+
+FROM
+
+server_metrics;
+```
+
+Highest Memory Usage
+
+```sql
+SELECT
+
+MAX(memory)
+
+FROM
+
+server_metrics;
+```
+
+---
+
+# 18. Cost Cutting Measures
+
+### English
+
+1. Remove unused servers.
+2. Compress logs.
+3. Automate monitoring.
+4. Optimize CPU usage.
+5. Remove idle applications.
+6. Implement preventive maintenance.
+
+### Hinglish
+
+1. Unused servers shutdown karo.
+2. Log rotation enable karo.
+3. Automation use karo.
+4. Resource wastage avoid karo.
+5. Idle services remove karo.
+6. Preventive maintenance implement karo.
+
+Expected Savings:
+
+```text
+10%–30%
+```
+
+in infrastructure costs.
+
+---
+
+# 19. Legal Considerations
+
+### English
+
+* Follow company security policies.
+* Protect customer data.
+* Restrict unauthorized access.
+* Maintain audit logs.
+* Follow software licensing requirements.
+
+### Hinglish
+
+* Data privacy maintain karo.
+* Unauthorized access prevent karo.
+* Audit logs maintain karo.
+* Licensed software hi use karo.
+
+---
+
+# 20. Environmental Impact
+
+### English
+
+Benefits:
+
+* Reduced power consumption.
+* Lower server utilization.
+* Reduced carbon footprint.
+
+### Hinglish
+
+* Electricity consumption kam hota hai.
+* Server efficiency improve hoti hai.
+* Data center cooling cost reduce hoti hai.
+
+---
+
+# 21. Social Impact
+
+### English
+
+* Better service availability.
+* Improved customer satisfaction.
+* Reduced downtime for business users.
+
+### Hinglish
+
+* Users ko better service milti hai.
+* Business continuity improve hoti hai.
+* Customer trust increase hota hai.
+
+---
+
+# Resume Description
+
+**Linux Server Monitoring & Automation**
+
+* Developed Python and Bash-based monitoring solutions for Linux infrastructure.
+* Automated CPU, memory, disk, service, and uptime monitoring.
+* Implemented cron-based automation and alerting mechanisms.
+* Generated performance analytics reports for capacity planning.
+* Improved server availability and reduced operational downtime.
+* Applied security, compliance, and cost-optimization best practices in production environments.
+
+
+
+
+
+# Linux Server Monitoring & Automation Project (Enterprise Scale)
+
+## Project Summary
+
+This project provides automated monitoring, alerting, reporting, security auditing, and capacity planning for large-scale Linux infrastructure.
+
+### Technologies Used
+
+* Linux (RHEL, Ubuntu, CentOS)
+* Python
+* Bash Shell Scripting
+* SQL
+* Cron
+* Prometheus
+* Grafana
+* ELK Stack
+* Zabbix
+* CloudWatch
+* Docker
+* Kubernetes
+
+---
+
+# Business Scenario
+
+Imagine an organization serving **150 crore users (1.5 billion users)** globally.
+
+Examples:
+
+* Social Media Platform
+* Banking Platform
+* E-Commerce Marketplace
+* OTT Platform
+* Government Digital Services
+* Telecom Provider
+
+Infrastructure might contain:
+
+```text
+50,000+ Linux Servers
+10,000+ Containers
+500+ Kubernetes Clusters
+100+ Data Centers
+Petabytes of Data
+Millions of Transactions Per Minute
+```
+
+---
+
+# Architecture
+
+```text
+Users
+  |
+Load Balancers
+  |
+Kubernetes Clusters
+  |
+Linux Application Servers
+  |
+Monitoring Agents
+  |
+Prometheus / Zabbix
+  |
+Grafana Dashboards
+  |
+Alert Manager
+  |
+Email / SMS / Slack
+  |
+Operations Team
+```
+
+---
+
+# Project Components
+
+## 1. CPU Monitoring
+
+Python collects:
+
+```python
+import psutil
+
+cpu = psutil.cpu_percent()
+print(cpu)
+```
+
+Purpose:
+
+* Detect CPU spikes
+* Capacity planning
+* Prevent outages
+
+---
+
+## 2. Memory Monitoring
+
+```python
+import psutil
+
+memory = psutil.virtual_memory()
+
+print(memory.percent)
+```
+
+Purpose:
+
+* Detect memory leaks
+* Prevent application crashes
+
+---
+
+## 3. Disk Monitoring
+
+```python
+import psutil
+
+disk = psutil.disk_usage('/')
+
+print(disk.percent)
+```
+
+Purpose:
+
+* Prevent storage exhaustion
+* Avoid database failures
+
+---
+
+## 4. Service Monitoring
+
+```bash
+systemctl is-active nginx
+```
+
+Checks:
+
+* Nginx
+* Apache
+* MySQL
+* PostgreSQL
+* Docker
+* Kubernetes services
+
+---
+
+## 5. Uptime Monitoring
+
+```bash
+uptime
+```
+
+Tracks:
+
+* Server availability
+* SLA compliance
+
+---
+
+## 6. Log Monitoring
+
+```bash
+tail -f /var/log/messages
+```
+
+or
+
+```bash
+journalctl -xe
+```
+
+Detects:
+
+* Security incidents
+* Application errors
+* System failures
+
+---
+
+# Automation Layer
+
+## Cron Jobs
+
+Every 5 minutes:
+
+```bash
+*/5 * * * * /opt/scripts/monitor.sh
+```
+
+Every hour:
+
+```bash
+0 * * * * /opt/scripts/report.sh
+```
+
+Every day:
+
+```bash
+0 0 * * * /opt/scripts/backup.sh
+```
+
+---
+
+# Reporting System
+
+Daily Reports
+
+```sql
+SELECT
+AVG(cpu_usage)
+FROM server_metrics;
+```
+
+Weekly Reports
+
+```sql
+SELECT
+hostname,
+MAX(cpu_usage)
+FROM server_metrics
+GROUP BY hostname;
+```
+
+---
+
+# Cost Cutting Strategies
+
+For an infrastructure serving billions of users, costs can reach hundreds of millions of dollars annually.
+
+## 1. Right Sizing Servers
+
+Before:
+
+```text
+CPU Usage = 10%
+RAM Usage = 15%
+```
+
+Overprovisioned.
+
+After optimization:
+
+```text
+CPU Usage = 50%
+RAM Usage = 60%
+```
+
+Potential savings:
+
+```text
+20%–40%
+```
+
+---
+
+## 2. Storage Optimization
+
+Actions:
+
+* Compress logs
+* Archive old data
+* Delete unused backups
+
+Savings:
+
+```text
+15%–30%
+```
+
+---
+
+## 3. Automation
+
+Before:
+
+```text
+100 Engineers
+```
+
+After:
+
+```text
+60 Engineers
+```
+
+Automation reduces repetitive manual work.
+
+---
+
+## 4. Preventive Monitoring
+
+Without monitoring:
+
+```text
+Unexpected downtime
+Revenue loss
+Penalty costs
+```
+
+With monitoring:
+
+```text
+Early detection
+Faster resolution
+```
+
+---
+
+## 5. Energy Optimization
+
+Shut down idle resources.
+
+Benefits:
+
+```text
+Lower electricity usage
+Lower cooling costs
+```
+
+---
+
+# Advantages
+
+## Technical
+
+* Real-time monitoring
+* Faster incident response
+* Automated reporting
+* Better scalability
+* Improved reliability
+
+## Business
+
+* Lower operational costs
+* Improved customer experience
+* Higher uptime
+* Better compliance
+
+---
+
+# Disadvantages
+
+## Technical
+
+* Initial setup complexity
+* Monitoring overhead
+* Alert fatigue if poorly configured
+
+## Business
+
+* Licensing costs
+* Training requirements
+* Dedicated monitoring team needed
+
+---
+
+# Environmental Impact
+
+## Positive Effects
+
+### Reduced Energy Consumption
+
+Efficient utilization means:
+
+```text
+Fewer servers required
+```
+
+### Lower Carbon Emissions
+
+Reduced power usage lowers greenhouse gas emissions.
+
+### Reduced E-Waste
+
+Longer hardware life.
+
+### Efficient Cooling
+
+Data centers consume less cooling energy.
+
+---
+
+## Negative Effects
+
+### Large Data Centers
+
+Still consume significant power.
+
+### Battery Disposal
+
+UPS batteries require proper disposal.
+
+### Hardware Manufacturing Impact
+
+Servers, storage, and networking equipment require raw materials.
+
+---
+
+# Social Impact
+
+## Positive
+
+### Better User Experience
+
+Services stay available.
+
+### Digital Inclusion
+
+Reliable infrastructure enables online services.
+
+### Employment
+
+Creates roles in:
+
+* Linux Administration
+* DevOps
+* SRE
+* Cloud Engineering
+* Security
+
+### Business Continuity
+
+Banks, hospitals, and governments remain operational.
+
+---
+
+## Negative
+
+### Job Displacement
+
+Automation can reduce repetitive operational roles.
+
+### Monitoring Privacy Concerns
+
+Improper monitoring can expose sensitive information.
+
+### Skill Gap
+
+Teams need continuous training.
+
+---
+
+# Legal & Compliance Considerations
+
+Organizations must comply with regulations such as:
+
+* GDPR (Europe)
+* DPDP Act (India)
+* HIPAA (Healthcare)
+* PCI-DSS (Payments)
+* ISO 27001
+* SOC 2
+
+Key requirements:
+
+### Access Control
+
+```bash
+chmod 750 sensitive_data
+```
+
+### Audit Logging
+
+```bash
+auditctl
+```
+
+### Encryption
+
+Data at rest and in transit.
+
+### Retention Policies
+
+Maintain logs according to regulatory requirements.
+
+### Incident Response
+
+Document and report breaches as required by law.
+
+---
+
+# Resume-Level Project Description
+
+**Linux Server Monitoring & Automation Platform**
+
+* Designed and implemented enterprise-scale monitoring for Linux infrastructure using Python, Bash, SQL, Prometheus, Grafana, and ELK Stack.
+* Automated CPU, memory, disk, service, and uptime monitoring with cron-based scheduling and alerting.
+* Developed analytics and capacity-planning reports to optimize infrastructure utilization.
+* Implemented proactive monitoring that reduced operational downtime and improved service reliability.
+* Applied security controls, audit logging, compliance standards, and cost-optimization strategies across production environments.
+* Supported scalable infrastructure capable of serving very large user populations while balancing performance, reliability, and operational efficiency.
+
+
+pwd 
+/home/admin
+ls
+ls-la
+drwxr-xr-x admin admin project
+-rw-r--r-- admin admin notes.txt
+
+cd/var/log
+cd~
+cd-
+cd..
+/
+bin
+etec
+home
+var
+tmp
+usr
+opt
+
+mkdir project
+mkdir -p app/logs/archive
+touch app.log
+cp app.log backup.log
+rm backup.log
+
+rm-rf project
+ls-l
+-rwx-xr-x
+owner = rwx
+grou[ = r-x
+others = r-x
+
+chmod 755 script.sh
+sudo chown devops:admins file.txt
+ls-l
+ln-s app.log applink.log
+ln app.log hardlink.log
+sudo useradd john
+
+sudo passwd john
+sudo groupadd devops// create group
+
+sudo user -aG devops john
+
+id john
+uid = 1001
+gid =1001
+groups = devops
+
+
+sudo usermod -aG wheel john
+sudo usermod -aG sudo john
+
+
+
+#!/bin/bash
+
+for user in dev1 dev2 dev3 
+do
+useradd $user
+echo "created $user"
+done
+
+
+chmod +x create_users.sh
+./create_users.sh
+
+ps-ef
+top
+htop
+ps-ef| grp nginx
+
+kill PID
+kill -9 PID
+import psutil
+
+for process in psutil.process_iter():
+  print (
+       process.pid,
+       process.name()
+)
+
+
+import psuttil
+print (
+psutil.cpu_percent()
+)
+
+import psutil
+print ( psutil.virtual_memory().percent
+)
+
+
+import psutil
+print( psutil.disk_usage('/').percent
+)
+
+vim test.txt
+press i
+:w
+:q
+:wq
+:ql
+
+sudo apt install nginx
+sudo yum install nginx
+sudo systemctl start nginx
+sudo systemctl stop nginx
+sudo systemctl restart nginx
+
+
+systemctl status nginx
+sudo syste,ctl enable nginx
+
+ip addr
+ip route
+nslookup google.com
+
+
+ping google.com
+
+
+#!/bin/bash
+DATE = $(date +%F)
+cp database.sql\
+backup_$DAT.sql
+
+
+./backup.sh
+
+#!/bin/bash
+find/var/log\
+-name "*.log"\
+-mtime +30\
+-delete
+
+
+crontab -e
+*/5****/home/admin/monitor.sh
+
+00***/home/admin/backup.sh
+
+import psutil
+import datetime
+
+cpu = psutil.cpu_percent()
+memory = psutil.virtual_memory().percent
+disk = psutil.disk_usage('/').percent
+time = datetime.datetime.now()
+print( time, cpu, memory,disk)
+
+
+CREATE TABLE server_metrics(
+id INT AUTO_INCREMENT,
+hostname VARCHAR(50),
+cpu FLOAT,
+MEMORY FLOAT,
+disk FLOAT,
+crated_at TIMESTAMP,
+PRIMARY KEY(id)
+);
+
+INSERT INTO srver_metrics(
+hostname, cpu, memory, disk)
+VALUES ( 'linux01', 30.2, 60.1, 50.4);
+
+CREATE TABLE S_METRICS (
+id INT ..........,
+HOSTNAME.......,
+CPU......
+MEMORY.....
+DISK.....
+CREATED_AT.....
+PRIMARY KEY........
+)
+INSERT VALUE
+CREATE TABLE server_metrics(
+
+id INT AUTO_INCREMENT,
+
+hostname VARCHAR(50),
+
+cpu FLOAT,
+
+memory FLOAT,
+
+disk FLOAT,
+
+created_at TIMESTAMP,
+
+PRIMARY KEY(id)
+
+);4
+
+INSERT INTO server_metrics(
+
+hostname,
+cpu,
+memory,
+disk
+
+)
+
+VALUES(
+
+'linux01',
+30.2,
+60.1,
+50.4
+
+);
+
+
+tail -f /var/log/messages
+scrape_configs:
+
+- job_name: linux
+
+  static_configs:
+
+  - targets:
+
+    - localhost:9100
+
+./node_exporter
+
+wget https://github.com/prometheus/node_exporter/releases/latest/download/node_exporter.tar.gz
+
+
+
+SELECT
+
+MAX(memory)
+
+FROM server_metrics;
+
+SELECT
+
+AVG(cpu)
+
+FROM server_metrics;
+
+
+INSERT INTO server_metrics(
+
+hostname,
+cpu,
+memory,
+disk
+
+)
+
+VALUES(
+
+'linux01',
+30.2,
+60.1,
+50.4
+
+);
+
+
+CREATE TABLE server_metrics(
+
+id INT AUTO_INCREMENT,
+
+hostname VARCHAR(50),
+
+cpu FLOAT,
+
+memory FLOAT,
+
+disk FLOAT,
+
+created_at TIMESTAMP,
+
+PRIMARY KEY(id)
+
+);
+
+import psutil
+import datetime
+
+cpu = psutil.cpu_percent()
+
+memory = psutil.virtual_memory().percent
+
+disk = psutil.disk_usage('/').percent
+
+time = datetime.datetime.now()
+
+print(
+    time,
+    cpu,
+    memory,
+    disk
+)
+
+Linux Infrastructure Monitoring & Automation Platform
+
+Designed and implemented enterprise-scale monitoring for Linux infrastructure using Python, Bash, SQL, Prometheus, Grafana, and ELK Stack.
+Automated CPU, memory, disk, process, and uptime monitoring using cron-based scheduling.
+Developed user management, file system management, and process monitoring automation scripts.
+Generated performance analytics reports for capacity planning and infrastructure optimization.
+Improved server reliability, reduced downtime, and enhanced operational efficiency through proactive monitoring and alerting.
+Managed Linux administration tasks including permissions, ownership, services, networking, and security best practices.
+
+
+top
+mpstat 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
