@@ -1,1 +1,3050 @@
 
+## Linux Interview Questions and Answers (1–100)
+
+### 1. What is Linux?
+
+**Answer:** Linux is an open-source Unix-like operating system based on the Linux kernel created by Linus Torvalds.
+
+### 2. Who created Linux?
+
+**Answer:** Linus Torvalds created Linux in 1991.
+
+### 3. What is a Kernel?
+
+**Answer:** Kernel is the core part of the operating system that manages hardware resources.
+
+### 4. Is Linux open source?
+
+**Answer:** Yes, Linux is open source.
+
+### 5. What is a Linux Distribution?
+
+**Answer:** A Linux distribution is a packaged version of Linux with tools and software.
+
+### 6. Name some Linux distributions.
+
+**Answer:** Ubuntu, Red Hat Enterprise Linux, CentOS, Debian.
+
+### 7. What command shows current directory?
+
+**Answer:** `pwd`
+
+### 8. List files in Linux.
+
+**Answer:** `ls`
+
+### 9. List hidden files.
+
+**Answer:** `ls -a`
+
+### 10. Change directory command?
+
+**Answer:** `cd`
+
+---
+
+### 11. Create a directory.
+
+**Answer:** `mkdir test`
+
+### 12. Delete a directory.
+
+**Answer:** `rmdir test`
+
+### 13. Remove directory recursively.
+
+**Answer:** `rm -rf test`
+
+### 14. Create empty file.
+
+**Answer:** `touch file.txt`
+
+### 15. Copy files.
+
+**Answer:** `cp source destination`
+
+### 16. Move files.
+
+**Answer:** `mv file1 file2`
+
+### 17. Rename a file.
+
+**Answer:** `mv old.txt new.txt`
+
+### 18. Delete file.
+
+**Answer:** `rm file.txt`
+
+### 19. View file contents.
+
+**Answer:** `cat file.txt`
+
+### 20. View first 10 lines.
+
+**Answer:** `head file.txt`
+
+---
+
+### 21. View last 10 lines.
+
+**Answer:** `tail file.txt`
+
+### 22. Search text in file.
+
+**Answer:** `grep keyword file.txt`
+
+### 23. Count lines in file.
+
+**Answer:** `wc -l file.txt`
+
+### 24. Find files.
+
+**Answer:** `find / -name file.txt`
+
+### 25. Locate files quickly.
+
+**Answer:** `locate file.txt`
+
+### 26. Check disk usage.
+
+**Answer:** `df -h`
+
+### 27. Check directory size.
+
+**Answer:** `du -sh folder`
+
+### 28. Show memory usage.
+
+**Answer:** `free -m`
+
+### 29. Show CPU information.
+
+**Answer:** `lscpu`
+
+### 30. Show OS version.
+
+**Answer:** `cat /etc/os-release`
+
+---
+
+### 31. What is root user?
+
+**Answer:** Root is the administrator account.
+
+### 32. Create a user.
+
+**Answer:** `useradd john`
+
+### 33. Set password.
+
+**Answer:** `passwd john`
+
+### 34. Delete user.
+
+**Answer:** `userdel john`
+
+### 35. Create group.
+
+**Answer:** `groupadd devops`
+
+### 36. Add user to group.
+
+**Answer:** `usermod -aG devops john`
+
+### 37. Check current user.
+
+**Answer:** `whoami`
+
+### 38. View logged-in users.
+
+**Answer:** `who`
+
+### 39. Switch user.
+
+**Answer:** `su username`
+
+### 40. Run command as root.
+
+**Answer:** `sudo command`
+
+---
+
+### 41. What are Linux permissions?
+
+**Answer:** Read, Write, Execute.
+
+### 42. Change permissions.
+
+**Answer:** `chmod 755 file`
+
+### 43. Change ownership.
+
+**Answer:** `chown user:group file`
+
+### 44. Permission 777 means?
+
+**Answer:** Full access for everyone.
+
+### 45. Permission 755 means?
+
+**Answer:** Owner full access, others read and execute.
+
+### 46. Permission 644 means?
+
+**Answer:** Owner read/write, others read.
+
+### 47. View permissions.
+
+**Answer:** `ls -l`
+
+### 48. What is symbolic link?
+
+**Answer:** Shortcut to another file.
+
+### 49. Create symbolic link.
+
+**Answer:** `ln -s source target`
+
+### 50. Create hard link.
+
+**Answer:** `ln source target`
+
+---
+
+### 51. Show running processes.
+
+**Answer:** `ps -ef`
+
+### 52. Interactive process monitoring.
+
+**Answer:** `top`
+
+### 53. Better process viewer.
+
+**Answer:** `htop`
+
+### 54. Kill process.
+
+**Answer:** `kill PID`
+
+### 55. Force kill process.
+
+**Answer:** `kill -9 PID`
+
+### 56. Background process.
+
+**Answer:** `command &`
+
+### 57. Show jobs.
+
+**Answer:** `jobs`
+
+### 58. Bring job foreground.
+
+**Answer:** `fg`
+
+### 59. Process ID meaning?
+
+**Answer:** Unique identifier for a process.
+
+### 60. Check load average.
+
+**Answer:** `uptime`
+
+---
+
+### 61. Open VIM.
+
+**Answer:** `vim file.txt`
+
+### 62. VIM Insert Mode.
+
+**Answer:** Press `i`
+
+### 63. Save file in VIM.
+
+**Answer:** `:w`
+
+### 64. Quit VIM.
+
+**Answer:** `:q`
+
+### 65. Save and quit.
+
+**Answer:** `:wq`
+
+### 66. Exit without saving.
+
+**Answer:** `:q!`
+
+### 67. Delete line in VIM.
+
+**Answer:** `dd`
+
+### 68. Copy line in VIM.
+
+**Answer:** `yy`
+
+### 69. Paste line.
+
+**Answer:** `p`
+
+### 70. Search text.
+
+**Answer:** `/word`
+
+---
+
+### 71. Install package in Ubuntu.
+
+**Answer:** `apt install package`
+
+### 72. Install package in RHEL.
+
+**Answer:** `yum install package`
+
+### 73. Update packages.
+
+**Answer:** `yum update`
+
+### 74. Start service.
+
+**Answer:** `systemctl start service`
+
+### 75. Stop service.
+
+**Answer:** `systemctl stop service`
+
+### 76. Restart service.
+
+**Answer:** `systemctl restart service`
+
+### 77. Check service status.
+
+**Answer:** `systemctl status service`
+
+### 78. Enable service at boot.
+
+**Answer:** `systemctl enable service`
+
+### 79. Disable service.
+
+**Answer:** `systemctl disable service`
+
+### 80. View logs.
+
+**Answer:** `journalctl`
+
+---
+
+### 81. Check IP address.
+
+**Answer:** `ip addr`
+
+### 82. Check routing table.
+
+**Answer:** `ip route`
+
+### 83. Test connectivity.
+
+**Answer:** `ping`
+
+### 84. DNS lookup.
+
+**Answer:** `nslookup`
+
+### 85. Check open ports.
+
+**Answer:** `netstat -tulnp`
+
+### 86. Alternative to netstat.
+
+**Answer:** `ss -tulnp`
+
+### 87. Download file.
+
+**Answer:** `wget URL`
+
+### 88. Another download tool.
+
+**Answer:** `curl URL`
+
+### 89. Secure remote login.
+
+**Answer:** SSH
+
+### 90. SSH command.
+
+**Answer:** `ssh user@server`
+
+---
+
+### 91. What is Cron?
+
+**Answer:** Scheduler for automated jobs.
+
+### 92. Edit cron jobs.
+
+**Answer:** `crontab -e`
+
+### 93. List cron jobs.
+
+**Answer:** `crontab -l`
+
+### 94. Run script daily.
+
+**Answer:** Using cron schedule.
+
+### 95. What is Bash?
+
+**Answer:** Linux shell and scripting language.
+
+### 96. Display environment variables.
+
+**Answer:** `env`
+
+### 97. Check system uptime.
+
+**Answer:** `uptime`
+
+### 98. Monitor disk I/O.
+
+**Answer:** `iostat`
+
+### 99. Monitor memory and CPU.
+
+**Answer:** `vmstat`
+
+### 100. Why is Linux popular in servers?
+
+**Answer:** It is stable, secure, scalable, open source, and widely used in cloud, DevOps, data centers, containers, and enterprise environments.
+
+practical Linux administration, NOC, Data Center, DevOps, and interview scenarios.
+
+Linux Practical MCQs (1–50) – Hinglish
+1. Current directory check karne ke liye command?
+
+A. ls
+B. pwd
+C. cd
+D. dir
+
+✅ Answer: B. pwd
+
+2. Hidden files dekhne ke liye?
+
+A. ls -h
+B. ls -l
+C. ls -a
+D. ls -r
+
+✅ Answer: C. ls -a
+
+3. New directory create karne ke liye?
+
+A. touch
+B. mkdir
+C. create
+D. dir
+
+✅ Answer: B. mkdir
+
+4. File delete karne ke liye?
+
+A. del
+B. erase
+C. rm
+D. remove
+
+✅ Answer: C. rm
+
+5. Recursive directory delete?
+
+A. rm -rf
+B. delete -all
+C. rmdir -all
+D. erase
+
+✅ Answer: A. rm -rf
+
+6. File content display?
+
+A. more
+B. cat
+C. view
+D. open
+
+✅ Answer: B. cat
+
+7. First 10 lines dekhne ke liye?
+
+A. tail
+B. head
+C. cat
+D. grep
+
+✅ Answer: B. head
+
+8. Last 10 lines?
+
+A. tail
+B. head
+C. less
+D. cat
+
+✅ Answer: A. tail
+
+9. Text search command?
+
+A. find
+B. grep
+C. search
+D. locate
+
+✅ Answer: B. grep
+
+10. Current logged-in user?
+
+A. user
+B. login
+C. whoami
+D. id
+
+✅ Answer: C. whoami
+
+11. Disk usage check?
+
+A. du
+B. df -h
+C. lsblk
+D. fdisk
+
+✅ Answer: B. df -h
+
+12. Folder size check?
+
+A. du -sh
+B. df -h
+C. ls
+D. size
+
+✅ Answer: A. du -sh
+
+13. Memory utilization?
+
+A. mem
+B. free -m
+C. ram
+D. topmem
+
+✅ Answer: B. free -m
+
+14. CPU utilization real-time?
+
+A. ps
+B. top
+C. cat
+D. free
+
+✅ Answer: B. top
+
+15. Better version of top?
+
+A. htop
+B. ptop
+C. vtop
+D. ctop
+
+✅ Answer: A. htop
+
+16. Process list?
+
+A. ps -ef
+B. listproc
+C. jobs
+D. proc
+
+✅ Answer: A. ps -ef
+
+17. Process kill?
+
+A. stop
+B. terminate
+C. kill PID
+D. end
+
+✅ Answer: C. kill PID
+
+18. Force kill?
+
+A. kill -9
+B. stop -9
+C. forcekill
+D. terminate
+
+✅ Answer: A. kill -9
+
+19. Service status?
+
+A. service check
+B. systemctl status
+C. status service
+D. service
+
+✅ Answer: B. systemctl status
+
+20. Apache start karne ke liye?
+
+A. start apache
+B. systemctl start httpd
+C. apache start
+D. service apache
+
+✅ Answer: B. systemctl start httpd
+
+21. User create?
+
+A. adduser
+B. useradd
+C. newuser
+D. createuser
+
+✅ Answer: B. useradd
+
+22. Password set?
+
+A. setpass
+B. passwd
+C. password
+D. userpass
+
+✅ Answer: B. passwd
+
+23. Group create?
+
+A. addgroup
+B. groupadd
+C. creategroup
+D. group
+
+✅ Answer: B. groupadd
+
+24. User ko group me add?
+
+A. addgroup
+B. usermod -aG
+C. groupmod
+D. join
+
+✅ Answer: B. usermod -aG
+
+25. Root user switch?
+
+A. root
+B. su -
+C. admin
+D. login root
+
+✅ Answer: B. su -
+
+26. Permission 777 ka matlab?
+
+A. Read only
+B. Full access sabko
+C. Owner only
+D. Execute only
+
+✅ Answer: B. Full access sabko
+
+27. Permission 755?
+
+A. Owner full, others read-execute
+B. Full access sabko
+C. Read only
+D. No access
+
+✅ Answer: A
+
+28. Permission change?
+
+A. chown
+B. chmod
+C. change
+D. permit
+
+✅ Answer: B. chmod
+
+29. Ownership change?
+
+A. chmod
+B. chown
+C. owner
+D. own
+
+✅ Answer: B. chown
+
+30. Symbolic link?
+
+A. ln -s
+B. link
+C. symlink
+D. mklink
+
+✅ Answer: A. ln -s
+
+31. Open port check?
+
+A. port
+B. netstat -tulnp
+C. ping
+D. route
+
+✅ Answer: B
+
+32. Modern netstat alternative?
+
+A. ss -tulnp
+B. route
+C. ping
+D. ifconfig
+
+✅ Answer: A
+
+33. IP address check?
+
+A. ip addr
+B. route
+C. net
+D. ping
+
+✅ Answer: A
+
+34. Routing table?
+
+A. route show
+B. ip route
+C. router
+D. netroute
+
+✅ Answer: B
+
+35. Connectivity test?
+
+A. ping
+B. route
+C. net
+D. ssh
+
+✅ Answer: A
+
+36. DNS lookup?
+
+A. ping
+B. nslookup
+C. route
+D. ssh
+
+✅ Answer: B
+
+37. Remote login?
+
+A. telnet
+B. ssh
+C. ftp
+D. scp
+
+✅ Answer: B
+
+38. File download?
+
+A. wget
+B. curl
+C. Both A and B
+D. ftp
+
+✅ Answer: C
+
+39. Cron edit?
+
+A. cron -e
+B. crontab -e
+C. edit cron
+D. cronjob
+
+✅ Answer: B
+
+40. Cron list?
+
+A. cron -l
+B. crontab -l
+C. listcron
+D. jobs
+
+✅ Answer: B
+
+41. VIM insert mode?
+
+A. Esc
+B. i
+C. a
+D. Both B and C
+
+✅ Answer: D
+
+42. Save in VIM?
+
+A. :w
+B. :save
+C. write
+D. store
+
+✅ Answer: A
+
+43. Save and quit?
+
+A. :wq
+B. :savequit
+C. quit
+D. exit
+
+✅ Answer: A
+
+44. Quit without saving?
+
+A. :q!
+B. :exit
+C. :quit
+D. :stop
+
+✅ Answer: A
+
+45. Copy line in VIM?
+
+A. cc
+B. yy
+C. copy
+D. pp
+
+✅ Answer: B
+
+46. Paste line in VIM?
+
+A. v
+B. p
+C. paste
+D. pp
+
+✅ Answer: B
+
+47. Linux package manager in Ubuntu?
+
+A. yum
+B. apt
+C. rpm
+D. dnf
+
+✅ Answer: B
+
+48. Linux package manager in RHEL?
+
+A. apt
+B. yum/dnf
+C. apk
+D. pkg
+
+✅ Answer: B
+
+49. System logs check?
+
+A. logs
+B. journalctl
+C. syslog
+D. eventvwr
+
+✅ Answer: B
+
+50. Data Center me CPU, Memory, Disk aur Network monitoring ke liye sabse common command?
+
+A. top
+B. vmstat
+C. iostat
+D. Sabhi
+
+✅ Answer: D. Sabhi
+
+1. Current directory check karne ke liye command?
+
+A. ls
+B. pwd
+C. cd
+D. dir
+
+✅ Answer: B. pwd
+
+2. Hidden files dekhne ke liye?
+
+A. ls -h
+B. ls -l
+C. ls -a
+D. ls -r
+
+✅ Answer: C. ls -a
+
+3. New directory create karne ke liye?
+
+A. touch
+B. mkdir
+C. create
+D. dir
+
+✅ Answer: B. mkdir
+
+4. File delete karne ke liye?
+
+A. del
+B. erase
+C. rm
+D. remove
+
+✅ Answer: C. rm
+
+5. Recursive directory delete?
+
+A. rm -rf
+B. delete -all
+C. rmdir -all
+D. erase
+
+✅ Answer: A. rm -rf
+
+6. File content display?
+
+A. more
+B. cat
+C. view
+D. open
+
+✅ Answer: B. cat
+
+7. First 10 lines dekhne ke liye?
+
+A. tail
+B. head
+C. cat
+D. grep
+
+✅ Answer: B. head
+
+8. Last 10 lines?
+
+A. tail
+B. head
+C. less
+D. cat
+
+✅ Answer: A. tail
+
+9. Text search command?
+
+A. find
+B. grep
+C. search
+D. locate
+
+✅ Answer: B. grep
+
+10. Current logged-in user?
+
+A. user
+B. login
+C. whoami
+D. id
+
+✅ Answer: C. whoami
+
+11. Disk usage check?
+
+A. du
+B. df -h
+C. lsblk
+D. fdisk
+
+✅ Answer: B. df -h
+
+12. Folder size check?
+
+A. du -sh
+B. df -h
+C. ls
+D. size
+
+✅ Answer: A. du -sh
+
+13. Memory utilization?
+
+A. mem
+B. free -m
+C. ram
+D. topmem
+
+✅ Answer: B. free -m
+
+14. CPU utilization real-time?
+
+A. ps
+B. top
+C. cat
+D. free
+
+✅ Answer: B. top
+
+15. Better version of top?
+
+A. htop
+B. ptop
+C. vtop
+D. ctop
+
+✅ Answer: A. htop
+
+16. Process list?
+
+A. ps -ef
+B. listproc
+C. jobs
+D. proc
+
+✅ Answer: A. ps -ef
+
+17. Process kill?
+
+A. stop
+B. terminate
+C. kill PID
+D. end
+
+✅ Answer: C. kill PID
+
+18. Force kill?
+
+A. kill -9
+B. stop -9
+C. forcekill
+D. terminate
+
+✅ Answer: A. kill -9
+
+19. Service status?
+
+A. service check
+B. systemctl status
+C. status service
+D. service
+
+✅ Answer: B. systemctl status
+
+20. Apache start karne ke liye?
+
+A. start apache
+B. systemctl start httpd
+C. apache start
+D. service apache
+
+✅ Answer: B. systemctl start httpd
+
+21. User create?
+
+A. adduser
+B. useradd
+C. newuser
+D. createuser
+
+✅ Answer: B. useradd
+
+22. Password set?
+
+A. setpass
+B. passwd
+C. password
+D. userpass
+
+✅ Answer: B. passwd
+
+23. Group create?
+
+A. addgroup
+B. groupadd
+C. creategroup
+D. group
+
+✅ Answer: B. groupadd
+
+24. User ko group me add?
+
+A. addgroup
+B. usermod -aG
+C. groupmod
+D. join
+
+✅ Answer: B. usermod -aG
+
+25. Root user switch?
+
+A. root
+B. su -
+C. admin
+D. login root
+
+✅ Answer: B. su -
+
+26. Permission 777 ka matlab?
+
+A. Read only
+B. Full access sabko
+C. Owner only
+D. Execute only
+
+✅ Answer: B. Full access sabko
+
+27. Permission 755?
+
+A. Owner full, others read-execute
+B. Full access sabko
+C. Read only
+D. No access
+
+✅ Answer: A
+
+28. Permission change?
+
+A. chown
+B. chmod
+C. change
+D. permit
+
+✅ Answer: B. chmod
+
+29. Ownership change?
+
+A. chmod
+B. chown
+C. owner
+D. own
+
+✅ Answer: B. chown
+
+30. Symbolic link?
+
+A. ln -s
+B. link
+C. symlink
+D. mklink
+
+✅ Answer: A. ln -s
+
+31. Open port check?
+
+A. port
+B. netstat -tulnp
+C. ping
+D. route
+
+✅ Answer: B
+
+32. Modern netstat alternative?
+
+A. ss -tulnp
+B. route
+C. ping
+D. ifconfig
+
+✅ Answer: A
+
+33. IP address check?
+
+A. ip addr
+B. route
+C. net
+D. ping
+
+✅ Answer: A
+
+34. Routing table?
+
+A. route show
+B. ip route
+C. router
+D. netroute
+
+✅ Answer: B
+
+35. Connectivity test?
+
+A. ping
+B. route
+C. net
+D. ssh
+
+✅ Answer: A
+
+36. DNS lookup?
+
+A. ping
+B. nslookup
+C. route
+D. ssh
+
+✅ Answer: B
+
+37. Remote login?
+
+A. telnet
+B. ssh
+C. ftp
+D. scp
+
+✅ Answer: B
+
+38. File download?
+
+A. wget
+B. curl
+C. Both A and B
+D. ftp
+
+✅ Answer: C
+
+39. Cron edit?
+
+A. cron -e
+B. crontab -e
+C. edit cron
+D. cronjob
+
+✅ Answer: B
+
+40. Cron list?
+
+A. cron -l
+B. crontab -l
+C. listcron
+D. jobs
+
+✅ Answer: B
+
+41. VIM insert mode?
+
+A. Esc
+B. i
+C. a
+D. Both B and C
+
+✅ Answer: D
+
+42. Save in VIM?
+
+A. :w
+B. :save
+C. write
+D. store
+
+✅ Answer: A
+
+43. Save and quit?
+
+A. :wq
+B. :savequit
+C. quit
+D. exit
+
+✅ Answer: A
+
+44. Quit without saving?
+
+A. :q!
+B. :exit
+C. :quit
+D. :stop
+
+✅ Answer: A
+
+45. Copy line in VIM?
+
+A. cc
+B. yy
+C. copy
+D. pp
+
+✅ Answer: B
+
+46. Paste line in VIM?
+
+A. v
+B. p
+C. paste
+D. pp
+
+✅ Answer: B
+
+47. Linux package manager in Ubuntu?
+
+A. yum
+B. apt
+C. rpm
+D. dnf
+
+✅ Answer: B
+
+48. Linux package manager in RHEL?
+
+A. apt
+B. yum/dnf
+C. apk
+D. pkg
+
+✅ Answer: B
+
+49. System logs check?
+
+A. logs
+B. journalctl
+C. syslog
+D. eventvwr
+
+✅ Answer: B
+
+50. Data Center me CPU, Memory, Disk aur Network monitoring ke liye sabse common command?
+
+A. top
+B. vmstat
+C. iostat
+D. Sabhi
+
+✅ Answer: D. Sabhi
+
+These 50 MCQs cover practical Linux administration, NOC operations, Data Center support, server management, troubleshooting, and DevOps basics. The next set (51–200) can cover advanced topics like SSH, LVM, RAID, NFS, Samba, Docker, Kubernetes, Jenkins, Ansible, systemd, networking, security, and production troubleshooting.
+
+touch - update file's timestamp. More commonly used for creating files
+ls - listing files and directories
+rm - remove files and directories
+cat - create, view and concatenate files
+cp - copy files and directories
+mkdir - create directories
+pwd - print current working directory (= at what path the user currently located)
+cd - change directory MAKE 60 MCQ AND 30 CODE BASED SOLUTIONS WITH QUESTIONS
+Linux Commands MCQ (1–60)
+touch Command
+1. touch command ka primary use kya hai?
+
+A. Delete file
+B. Create file
+C. Move file
+D. Copy file
+
+✅ Answer: B
+
+2. Agar file exist karti hai to touch kya karega?
+
+A. Delete karega
+B. Rename karega
+C. Timestamp update karega
+D. Move karega
+
+✅ Answer: C
+
+3. Empty file create karne ke liye?
+touch test.txt
+
+A. False
+B. True
+
+✅ Answer: B
+
+4. Multiple files create karne ke liye?
+touch a.txt b.txt c.txt
+
+A. Wrong
+B. Correct
+
+✅ Answer: B
+
+5. touch kis category ka command hai?
+
+A. Networking
+B. File Management
+C. Security
+D. Process
+
+✅ Answer: B
+
+ls Command
+6. Files list karne ke liye?
+
+A. pwd
+B. ls
+C. cd
+D. rm
+
+✅ Answer: B
+
+7. Hidden files show karne ke liye?
+
+A. ls -h
+B. ls -a
+C. ls -r
+D. ls -x
+
+✅ Answer: B
+
+8. Detailed listing?
+
+A. ls -l
+B. ls -a
+C. ls -h
+D. ls -r
+
+✅ Answer: A
+
+9. Human readable size?
+
+A. ls -s
+B. ls -lh
+C. ls -x
+D. ls -z
+
+✅ Answer: B
+
+10. Hidden + Detailed listing?
+
+A. ls -al
+B. ls -a
+C. ls -l
+D. ls -laa
+
+✅ Answer: A
+
+rm Command
+11. File remove karne ke liye?
+
+A. del
+B. rm
+C. remove
+D. erase
+
+✅ Answer: B
+
+12. Recursive delete?
+
+A. rm -rf
+B. rm -l
+C. rm -a
+D. rm -d
+
+✅ Answer: A
+
+13. Force delete?
+
+A. rm -force
+B. rm -f
+C. rm -delete
+D. rm -all
+
+✅ Answer: B
+
+14. Dangerous command?
+
+A. rm -rf /
+B. ls
+C. pwd
+D. touch
+
+✅ Answer: A
+
+15. Empty directory delete?
+
+A. rm
+B. rmdir
+C. ls
+D. cat
+
+✅ Answer: B
+
+cat Command
+16. File content dekhne ke liye?
+
+A. cat
+B. pwd
+C. ls
+D. cd
+
+✅ Answer: A
+
+17. New file create?
+cat > file.txt
+
+A. Yes
+B. No
+
+✅ Answer: A
+
+18. Multiple files merge?
+cat a.txt b.txt
+
+A. Correct
+B. Wrong
+
+✅ Answer: A
+
+19. Line numbers show?
+
+A. cat -n
+B. cat -l
+C. cat -s
+D. cat -r
+
+✅ Answer: A
+
+20. End of line marker?
+
+A. cat -e
+B. cat -x
+C. cat -l
+D. cat -k
+
+✅ Answer: A
+
+cp Command
+21. Copy file?
+
+A. cp
+B. mv
+C. rm
+D. ls
+
+✅ Answer: A
+
+22. Directory copy?
+
+A. cp -r
+B. cp -d
+C. cp -l
+D. cp -m
+
+✅ Answer: A
+
+23. File backup?
+cp test.txt backup.txt
+
+A. Correct
+B. Wrong
+
+✅ Answer: A
+
+24. Preserve permissions?
+
+A. cp -p
+B. cp -s
+C. cp -x
+D. cp -u
+
+✅ Answer: A
+
+25. Interactive copy?
+
+A. cp -i
+B. cp -a
+C. cp -r
+D. cp -l
+
+✅ Answer: A
+
+mkdir Command
+26. Create directory?
+
+A. mkdir
+B. touch
+C. create
+D. dir
+
+✅ Answer: A
+
+27. Nested directories?
+
+A. mkdir -p
+B. mkdir -r
+C. mkdir -a
+D. mkdir -s
+
+✅ Answer: A
+
+28. Create multiple directories?
+mkdir dir1 dir2 dir3
+
+A. Correct
+B. Wrong
+
+✅ Answer: A
+
+29. Parent directory create?
+
+A. mkdir -p
+B. mkdir -r
+C. mkdir -a
+D. mkdir -x
+
+✅ Answer: A
+
+30. Directory management command?
+
+A. mkdir
+B. touch
+C. pwd
+D. cat
+
+✅ Answer: A
+
+pwd Command
+31. Current directory show?
+
+A. pwd
+B. ls
+C. cd
+D. rm
+
+✅ Answer: A
+
+32. pwd stands for?
+
+A. Print Working Directory
+B. Present Working Directory
+C. Print Window Directory
+D. Path Working Directory
+
+✅ Answer: A
+
+33. Example output?
+/home/user
+
+A. Valid
+B. Invalid
+
+✅ Answer: A
+
+34. pwd kis type ka command hai?
+
+A. Networking
+B. File System
+C. Security
+D. Process
+
+✅ Answer: B
+
+35. pwd without arguments?
+
+A. Yes
+B. No
+
+✅ Answer: A
+
+cd Command
+36. Directory change?
+
+A. cd
+B. pwd
+C. ls
+D. rm
+
+✅ Answer: A
+
+37. Home directory?
+cd ~
+
+A. Correct
+B. Wrong
+
+✅ Answer: A
+
+38. Previous directory?
+cd -
+
+A. Correct
+B. Wrong
+
+✅ Answer: A
+
+39. Root directory?
+cd /
+
+A. Correct
+B. Wrong
+
+✅ Answer: A
+
+40. Parent directory?
+cd ..
+
+A. Correct
+B. Wrong
+
+✅ Answer: A
+
+Mixed Practical MCQs
+41. File create + view?
+
+A. touch + cat
+B. ls + pwd
+C. rm + cp
+D. mkdir + cd
+
+✅ Answer: A
+
+42. Copy then delete?
+
+A. cp then rm
+B. rm then cp
+C. mkdir then rm
+D. pwd then cp
+
+✅ Answer: A
+
+43. Create directory and move inside?
+
+A. mkdir test && cd test
+B. touch test
+C. rm test
+D. pwd test
+
+✅ Answer: A
+
+44. Show current path?
+
+A. pwd
+B. ls
+C. cd
+D. cat
+
+✅ Answer: A
+
+45. List files with permissions?
+
+A. ls -l
+B. pwd
+C. touch
+D. cat
+
+✅ Answer: A
+
+46. Hidden files?
+
+A. ls -a
+B. pwd
+C. rm
+D. cp
+
+✅ Answer: A
+
+47. Copy folder recursively?
+
+A. cp -r
+B. cp -l
+C. cp -x
+D. cp -s
+
+✅ Answer: A
+
+48. Delete folder recursively?
+
+A. rm -rf
+B. rmdir
+C. ls
+D. pwd
+
+✅ Answer: A
+
+49. Create nested path?
+
+A. mkdir -p app/logs/archive
+B. mkdir app/logs/archive
+C. touch app/logs
+D. ls app
+
+✅ Answer: A
+
+50. File content append?
+cat >> file.txt
+
+A. Correct
+B. Wrong
+
+✅ Answer: A
+
+51. Show line numbers?
+
+A. cat -n
+B. cat -l
+C. cat -s
+D. cat -v
+
+✅ Answer: A
+
+52. Current directory files?
+
+A. ls
+B. pwd
+C. cd
+D. mkdir
+
+✅ Answer: A
+
+53. Go to parent folder?
+
+A. cd ..
+B. cd /
+C. pwd
+D. ls
+
+✅ Answer: A
+
+54. Create file named notes.txt?
+
+A. touch notes.txt
+B. mkdir notes.txt
+C. rm notes.txt
+D. pwd notes.txt
+
+✅ Answer: A
+
+55. Remove notes.txt?
+
+A. rm notes.txt
+B. cp notes.txt
+C. ls notes.txt
+D. pwd notes.txt
+
+✅ Answer: A
+
+56. Copy notes.txt to backup.txt?
+
+A. cp notes.txt backup.txt
+B. mv notes.txt backup.txt
+C. rm notes.txt
+D. pwd
+
+✅ Answer: A
+
+57. Create project directory?
+
+A. mkdir project
+B. touch project
+C. cat project
+D. pwd project
+
+✅ Answer: A
+
+58. View project files?
+
+A. ls project
+B. pwd project
+C. rm project
+D. cat project
+
+✅ Answer: A
+
+59. Check current location?
+
+A. pwd
+B. cat
+C. rm
+D. cp
+
+✅ Answer: A
+
+60. Most used Linux file-management commands?
+
+A. touch, ls, rm
+B. pwd, cd
+C. cp, mkdir, cat
+D. All of the above
+
+✅ Answer: D
+
+30 Code-Based Practical Questions with Solutions
+1. Create file app.log
+touch app.log
+2. Create three files
+touch a.txt b.txt c.txt
+3. List all files
+ls
+4. Show hidden files
+ls -a
+5. Detailed listing
+ls -l
+6. Create directory
+mkdir project
+7. Create nested directory
+mkdir -p project/src/python
+8. Go to project directory
+cd project
+9. Go back one level
+cd ..
+10. Show current path
+pwd
+11. Create file and display
+touch test.txt
+cat test.txt
+12. Write content
+cat > test.txt
+Hello Linux
+13. Append content
+cat >> test.txt
+Second Line
+14. View file
+cat test.txt
+15. Copy file
+cp test.txt backup.txt
+16. Copy folder
+cp -r project project_backup
+17. Delete file
+rm backup.txt
+18. Delete folder
+rm -rf project_backup
+19. Create logs directory
+mkdir logs
+20. Create multiple directories
+mkdir dev qa prod
+21. List with human-readable sizes
+ls -lh
+22. Show line numbers
+cat -n test.txt
+23. Create deployment structure
+mkdir -p app/{bin,conf,logs}
+24. Backup configuration
+cp config.yml config.yml.bak
+25. Remove old logs
+rm *.log
+26. Navigate to root
+cd /
+27. Return to home
+cd ~
+28. Return previous directory
+cd -
+29. Create 100 files
+touch file{1..100}.txt
+30. Create DevOps project structure
+mkdir -p devops/{ansible,docker,kubernetes,jenkins,terraform}
+ls devops
+
+These are practical Linux commands commonly asked in Linux Administrator, System Administrator, NOC Engineer, Data Center Engineer, DevOps Engineer, and Cloud Engineer interviews.
+
+# Linux Commands MCQ (1–60)
+
+## touch Command
+
+### 1. `touch` command ka primary use kya hai?
+
+A. Delete file
+B. Create file
+C. Move file
+D. Copy file
+
+✅ Answer: B
+
+### 2. Agar file exist karti hai to `touch` kya karega?
+
+A. Delete karega
+B. Rename karega
+C. Timestamp update karega
+D. Move karega
+
+✅ Answer: C
+
+### 3. Empty file create karne ke liye?
+
+```bash
+touch test.txt
+```
+
+A. False
+B. True
+
+✅ Answer: B
+
+### 4. Multiple files create karne ke liye?
+
+```bash
+touch a.txt b.txt c.txt
+```
+
+A. Wrong
+B. Correct
+
+✅ Answer: B
+
+### 5. `touch` kis category ka command hai?
+
+A. Networking
+B. File Management
+C. Security
+D. Process
+
+✅ Answer: B
+
+---
+
+# ls Command
+
+### 6. Files list karne ke liye?
+
+A. pwd
+B. ls
+C. cd
+D. rm
+
+✅ Answer: B
+
+### 7. Hidden files show karne ke liye?
+
+A. ls -h
+B. ls -a
+C. ls -r
+D. ls -x
+
+✅ Answer: B
+
+### 8. Detailed listing?
+
+A. ls -l
+B. ls -a
+C. ls -h
+D. ls -r
+
+✅ Answer: A
+
+### 9. Human readable size?
+
+A. ls -s
+B. ls -lh
+C. ls -x
+D. ls -z
+
+✅ Answer: B
+
+### 10. Hidden + Detailed listing?
+
+A. ls -al
+B. ls -a
+C. ls -l
+D. ls -laa
+
+✅ Answer: A
+
+---
+
+# rm Command
+
+### 11. File remove karne ke liye?
+
+A. del
+B. rm
+C. remove
+D. erase
+
+✅ Answer: B
+
+### 12. Recursive delete?
+
+A. rm -rf
+B. rm -l
+C. rm -a
+D. rm -d
+
+✅ Answer: A
+
+### 13. Force delete?
+
+A. rm -force
+B. rm -f
+C. rm -delete
+D. rm -all
+
+✅ Answer: B
+
+### 14. Dangerous command?
+
+A. rm -rf /
+B. ls
+C. pwd
+D. touch
+
+✅ Answer: A
+
+### 15. Empty directory delete?
+
+A. rm
+B. rmdir
+C. ls
+D. cat
+
+✅ Answer: B
+
+---
+
+# cat Command
+
+### 16. File content dekhne ke liye?
+
+A. cat
+B. pwd
+C. ls
+D. cd
+
+✅ Answer: A
+
+### 17. New file create?
+
+```bash
+cat > file.txt
+```
+
+A. Yes
+B. No
+
+✅ Answer: A
+
+### 18. Multiple files merge?
+
+```bash
+cat a.txt b.txt
+```
+
+A. Correct
+B. Wrong
+
+✅ Answer: A
+
+### 19. Line numbers show?
+
+A. cat -n
+B. cat -l
+C. cat -s
+D. cat -r
+
+✅ Answer: A
+
+### 20. End of line marker?
+
+A. cat -e
+B. cat -x
+C. cat -l
+D. cat -k
+
+✅ Answer: A
+
+---
+
+# cp Command
+
+### 21. Copy file?
+
+A. cp
+B. mv
+C. rm
+D. ls
+
+✅ Answer: A
+
+### 22. Directory copy?
+
+A. cp -r
+B. cp -d
+C. cp -l
+D. cp -m
+
+✅ Answer: A
+
+### 23. File backup?
+
+```bash
+cp test.txt backup.txt
+```
+
+A. Correct
+B. Wrong
+
+✅ Answer: A
+
+### 24. Preserve permissions?
+
+A. cp -p
+B. cp -s
+C. cp -x
+D. cp -u
+
+✅ Answer: A
+
+### 25. Interactive copy?
+
+A. cp -i
+B. cp -a
+C. cp -r
+D. cp -l
+
+✅ Answer: A
+
+---
+
+# mkdir Command
+
+### 26. Create directory?
+
+A. mkdir
+B. touch
+C. create
+D. dir
+
+✅ Answer: A
+
+### 27. Nested directories?
+
+A. mkdir -p
+B. mkdir -r
+C. mkdir -a
+D. mkdir -s
+
+✅ Answer: A
+
+### 28. Create multiple directories?
+
+```bash
+mkdir dir1 dir2 dir3
+```
+
+A. Correct
+B. Wrong
+
+✅ Answer: A
+
+### 29. Parent directory create?
+
+A. mkdir -p
+B. mkdir -r
+C. mkdir -a
+D. mkdir -x
+
+✅ Answer: A
+
+### 30. Directory management command?
+
+A. mkdir
+B. touch
+C. pwd
+D. cat
+
+✅ Answer: A
+
+---
+
+# pwd Command
+
+### 31. Current directory show?
+
+A. pwd
+B. ls
+C. cd
+D. rm
+
+✅ Answer: A
+
+### 32. pwd stands for?
+
+A. Print Working Directory
+B. Present Working Directory
+C. Print Window Directory
+D. Path Working Directory
+
+✅ Answer: A
+
+### 33. Example output?
+
+```bash
+/home/user
+```
+
+A. Valid
+B. Invalid
+
+✅ Answer: A
+
+### 34. pwd kis type ka command hai?
+
+A. Networking
+B. File System
+C. Security
+D. Process
+
+✅ Answer: B
+
+### 35. pwd without arguments?
+
+A. Yes
+B. No
+
+✅ Answer: A
+
+---
+
+# cd Command
+
+### 36. Directory change?
+
+A. cd
+B. pwd
+C. ls
+D. rm
+
+✅ Answer: A
+
+### 37. Home directory?
+
+```bash
+cd ~
+```
+
+A. Correct
+B. Wrong
+
+✅ Answer: A
+
+### 38. Previous directory?
+
+```bash
+cd -
+```
+
+A. Correct
+B. Wrong
+
+✅ Answer: A
+
+### 39. Root directory?
+
+```bash
+cd /
+```
+
+A. Correct
+B. Wrong
+
+✅ Answer: A
+
+### 40. Parent directory?
+
+```bash
+cd ..
+```
+
+A. Correct
+B. Wrong
+
+✅ Answer: A
+
+---
+
+# Mixed Practical MCQs
+
+### 41. File create + view?
+
+A. touch + cat
+B. ls + pwd
+C. rm + cp
+D. mkdir + cd
+
+✅ Answer: A
+
+### 42. Copy then delete?
+
+A. cp then rm
+B. rm then cp
+C. mkdir then rm
+D. pwd then cp
+
+✅ Answer: A
+
+### 43. Create directory and move inside?
+
+A. mkdir test && cd test
+B. touch test
+C. rm test
+D. pwd test
+
+✅ Answer: A
+
+### 44. Show current path?
+
+A. pwd
+B. ls
+C. cd
+D. cat
+
+✅ Answer: A
+
+### 45. List files with permissions?
+
+A. ls -l
+B. pwd
+C. touch
+D. cat
+
+✅ Answer: A
+
+### 46. Hidden files?
+
+A. ls -a
+B. pwd
+C. rm
+D. cp
+
+✅ Answer: A
+
+### 47. Copy folder recursively?
+
+A. cp -r
+B. cp -l
+C. cp -x
+D. cp -s
+
+✅ Answer: A
+
+### 48. Delete folder recursively?
+
+A. rm -rf
+B. rmdir
+C. ls
+D. pwd
+
+✅ Answer: A
+
+### 49. Create nested path?
+
+A. mkdir -p app/logs/archive
+B. mkdir app/logs/archive
+C. touch app/logs
+D. ls app
+
+✅ Answer: A
+
+### 50. File content append?
+
+```bash
+cat >> file.txt
+```
+
+A. Correct
+B. Wrong
+
+✅ Answer: A
+
+### 51. Show line numbers?
+
+A. cat -n
+B. cat -l
+C. cat -s
+D. cat -v
+
+✅ Answer: A
+
+### 52. Current directory files?
+
+A. ls
+B. pwd
+C. cd
+D. mkdir
+
+✅ Answer: A
+
+### 53. Go to parent folder?
+
+A. cd ..
+B. cd /
+C. pwd
+D. ls
+
+✅ Answer: A
+
+### 54. Create file named notes.txt?
+
+A. touch notes.txt
+B. mkdir notes.txt
+C. rm notes.txt
+D. pwd notes.txt
+
+✅ Answer: A
+
+### 55. Remove notes.txt?
+
+A. rm notes.txt
+B. cp notes.txt
+C. ls notes.txt
+D. pwd notes.txt
+
+✅ Answer: A
+
+### 56. Copy notes.txt to backup.txt?
+
+A. cp notes.txt backup.txt
+B. mv notes.txt backup.txt
+C. rm notes.txt
+D. pwd
+
+✅ Answer: A
+
+### 57. Create project directory?
+
+A. mkdir project
+B. touch project
+C. cat project
+D. pwd project
+
+✅ Answer: A
+
+### 58. View project files?
+
+A. ls project
+B. pwd project
+C. rm project
+D. cat project
+
+✅ Answer: A
+
+### 59. Check current location?
+
+A. pwd
+B. cat
+C. rm
+D. cp
+
+✅ Answer: A
+
+### 60. Most used Linux file-management commands?
+
+A. touch, ls, rm
+B. pwd, cd
+C. cp, mkdir, cat
+D. All of the above
+
+✅ Answer: D
+
+# 30 Code-Based Practical Questions with Solutions
+
+### 1. Create file `app.log`
+
+```bash
+touch app.log
+```
+
+### 2. Create three files
+
+```bash
+touch a.txt b.txt c.txt
+```
+
+### 3. List all files
+
+```bash
+ls
+```
+
+### 4. Show hidden files
+
+```bash
+ls -a
+```
+
+### 5. Detailed listing
+
+```bash
+ls -l
+```
+
+### 6. Create directory
+
+```bash
+mkdir project
+```
+
+### 7. Create nested directory
+
+```bash
+mkdir -p project/src/python
+```
+
+### 8. Go to project directory
+
+```bash
+cd project
+```
+
+### 9. Go back one level
+
+```bash
+cd ..
+```
+
+### 10. Show current path
+
+```bash
+pwd
+```
+
+### 11. Create file and display
+
+```bash
+touch test.txt
+cat test.txt
+```
+
+### 12. Write content
+
+```bash
+cat > test.txt
+Hello Linux
+```
+
+### 13. Append content
+
+```bash
+cat >> test.txt
+Second Line
+```
+
+### 14. View file
+
+```bash
+cat test.txt
+```
+
+### 15. Copy file
+
+```bash
+cp test.txt backup.txt
+```
+
+### 16. Copy folder
+
+```bash
+cp -r project project_backup
+```
+
+### 17. Delete file
+
+```bash
+rm backup.txt
+```
+
+### 18. Delete folder
+
+```bash
+rm -rf project_backup
+```
+
+### 19. Create logs directory
+
+```bash
+mkdir logs
+```
+
+### 20. Create multiple directories
+
+```bash
+mkdir dev qa prod
+```
+
+### 21. List with human-readable sizes
+
+```bash
+ls -lh
+```
+
+### 22. Show line numbers
+
+```bash
+cat -n test.txt
+```
+
+### 23. Create deployment structure
+
+```bash
+mkdir -p app/{bin,conf,logs}
+```
+
+### 24. Backup configuration
+
+```bash
+cp config.yml config.yml.bak
+```
+
+### 25. Remove old logs
+
+```bash
+rm *.log
+```
+
+### 26. Navigate to root
+
+```bash
+cd /
+```
+
+### 27. Return to home
+
+```bash
+cd ~
+```
+
+### 28. Return previous directory
+
+```bash
+cd -
+```
+
+### 29. Create 100 files
+
+```bash
+touch file{1..100}.txt
+```
+
+### 30. Create DevOps project structure
+
+```bash
+mkdir -p devops/{ansible,docker,kubernetes,jenkins,terraform}
+ls devops
+```
+
+These are practical Linux commands commonly asked in Linux Administrator, System Administrator, NOC Engineer, Data Center Engineer, DevOps Engineer, and Cloud Engineer interviews.
+
+
+
+# 1. Create a file named app.log
+
+```bash
+touch app.log
+```
+
+---
+
+# 2. Create three files
+
+```bash
+touch a.txt b.txt c.txt
+```
+
+---
+
+# 3. List all files in current directory
+
+```bash
+ls
+```
+
+---
+
+# 4. Show hidden files
+
+```bash
+ls -a
+```
+
+---
+
+# 5. Show detailed file listing
+
+```bash
+ls -l
+```
+
+---
+
+# 6. Create a directory named project
+
+```bash
+mkdir project
+```
+
+---
+
+# 7. Create nested directories
+
+```bash
+mkdir -p project/src/python
+```
+
+---
+
+# 8. Change into project directory
+
+```bash
+cd project
+```
+
+---
+
+# 9. Go back to parent directory
+
+```bash
+cd ..
+```
+
+---
+
+# 10. Display current working directory
+
+```bash
+pwd
+```
+
+---
+
+# 11. Create a file and display contents
+
+```bash
+touch test.txt
+cat test.txt
+```
+
+---
+
+# 12. Write content to a file
+
+```bash
+cat > test.txt
+Hello Linux
+```
+
+Press **Ctrl + D** to save.
+
+---
+
+# 13. Append content to existing file
+
+```bash
+cat >> test.txt
+Second Line
+```
+
+Press **Ctrl + D**.
+
+---
+
+# 14. View file content
+
+```bash
+cat test.txt
+```
+
+---
+
+# 15. Copy file
+
+```bash
+cp test.txt backup.txt
+```
+
+---
+
+# 16. Copy directory recursively
+
+```bash
+cp -r project project_backup
+```
+
+---
+
+# 17. Remove a file
+
+```bash
+rm backup.txt
+```
+
+---
+
+# 18. Remove a directory recursively
+
+```bash
+rm -rf project_backup
+```
+
+---
+
+# 19. Create logs directory
+
+```bash
+mkdir logs
+```
+
+---
+
+# 20. Create multiple directories
+
+```bash
+mkdir dev qa prod
+```
+
+---
+
+# 21. Show files with human-readable sizes
+
+```bash
+ls -lh
+```
+
+---
+
+# 22. Display file with line numbers
+
+```bash
+cat -n test.txt
+```
+
+---
+
+# 23. Create application directory structure
+
+```bash
+mkdir -p app/bin
+mkdir -p app/conf
+mkdir -p app/logs
+```
+
+Or:
+
+```bash
+mkdir -p app/{bin,conf,logs}
+```
+
+---
+
+# 24. Backup configuration file
+
+```bash
+cp config.yml config.yml.bak
+```
+
+---
+
+# 25. Delete all log files
+
+```bash
+rm *.log
+```
+
+---
+
+# 26. Move to root directory
+
+```bash
+cd /
+```
+
+---
+
+# 27. Move to home directory
+
+```bash
+cd ~
+```
+
+---
+
+# 28. Return to previous directory
+
+```bash
+cd -
+```
+
+---
+
+# 29. Create 100 files
+
+```bash
+touch file{1..100}.txt
+```
+
+Verify:
+
+```bash
+ls
+```
+
+---
+
+# 30. Create DevOps project structure
+
+```bash
+mkdir -p devops/ansible
+mkdir -p devops/docker
+mkdir -p devops/kubernetes
+mkdir -p devops/jenkins
+mkdir -p devops/terraform
+```
+
+Or:
+
+```bash
+mkdir -p devops/{ansible,docker,kubernetes,jenkins,terraform}
+```
+
+Check:
+
+```bash
+ls devops
+```
+
+Output:
+
+```text
+ansible
+docker
+jenkins
+kubernetes
+terraform
+```
+
+# Mini End-to-End Practice Lab
+
+```bash
+mkdir linux_lab
+
+cd linux_lab
+
+touch file1.txt
+
+echo "Linux Practice" > file1.txt
+
+cat file1.txt
+
+cp file1.txt backup.txt
+
+mkdir project
+
+mv file1.txt project/
+
+ls -l
+
+pwd
+
+cd project
+
+cat file1.txt
+
+cd ..
+
+rm backup.txt
+
+rm -rf project
+
+ls
+```
+
+This sequence practices **touch, ls, rm, cat, cp, mkdir, pwd, and cd** together, which are the most common Linux interview and administration commands.
+
+
