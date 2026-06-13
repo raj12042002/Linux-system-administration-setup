@@ -1,0 +1,550 @@
+# Full DevOps Stack Project
+
+## Cloud-Native Three-Tier Application on AWS
+
+### Project Overview
+
+Build a production-grade application using:
+
+* AWS EC2
+* AWS VPC
+* AWS S3
+* AWS RDS
+* AWS IAM
+* AWS Route53
+* AWS CloudWatch
+* AWS SNS
+* AWS Lambda
+* Docker
+* Kubernetes
+* Jenkins
+* Terraform
+* Ansible
+* GitHub
+* Python
+* Bash
+* Prometheus
+* Grafana
+* ELK Stack
+
+---
+
+# Architecture
+
+```text
+Users
+   |
+Route53
+   |
+CloudFront
+   |
+Application Load Balancer
+   |
+EKS Kubernetes Cluster
+   |
+Docker Containers
+   |
+RDS MySQL
+   |
+S3 Storage
+
+Monitoring:
+Prometheus
+Grafana
+CloudWatch
+
+CI/CD:
+GitHub
+Jenkins
+
+Infrastructure:
+Terraform
+Ansible
+```
+
+---
+
+# Project Structure
+
+```text
+devops-project/
+
+├── terraform/
+│   ├── vpc.tf
+│   ├── ec2.tf
+│   ├── rds.tf
+│   ├── s3.tf
+│   └── outputs.tf
+│
+├── ansible/
+│   ├── inventory.ini
+│   └── webserver.yml
+│
+├── docker/
+│   ├── Dockerfile
+│   └── app.py
+│
+├── kubernetes/
+│   ├── deployment.yml
+│   ├── service.yml
+│   └── ingress.yml
+│
+├── jenkins/
+│   └── Jenkinsfile
+│
+├── monitoring/
+│   ├── prometheus.yml
+│   └── grafana-dashboard.json
+│
+└── scripts/
+    ├── backup.sh
+    └── monitoring.py
+```
+
+---
+
+# Python Flask Application
+
+```python
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route("/")
+def home():
+    return "DevOps Full Stack Project"
+
+@app.route("/health")
+def health():
+    return "OK"
+
+if __name__ == "__main__":
+    app.run(
+        host="0.0.0.0",
+        port=5000
+    )
+```
+
+---
+
+# Dockerfile
+
+```dockerfile
+FROM python:3.11
+
+WORKDIR /app
+
+COPY . .
+
+RUN pip install flask
+
+EXPOSE 5000
+
+CMD ["python","app.py"]
+```
+
+---
+
+# Build Docker Image
+
+```bash
+docker build -t devops-app .
+```
+
+---
+
+# Run Container
+
+```bash
+docker run -d -p 5000:5000 devops-app
+```
+
+---
+
+# Kubernetes Deployment
+
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: devops-app
+
+spec:
+  replicas: 3
+
+  selector:
+    matchLabels:
+      app: devops-app
+
+  template:
+    metadata:
+      labels:
+        app: devops-app
+
+    spec:
+      containers:
+
+      - name: app
+
+        image: devops-app:latest
+
+        ports:
+        - containerPort: 5000
+```
+
+---
+
+# Kubernetes Service
+
+```yaml
+apiVersion: v1
+
+kind: Service
+
+metadata:
+  name: devops-service
+
+spec:
+
+  type: LoadBalancer
+
+  selector:
+    app: devops-app
+
+  ports:
+
+  - port: 80
+
+    targetPort: 5000
+```
+
+---
+
+# Terraform VPC
+
+```hcl
+resource "aws_vpc" "main" {
+
+  cidr_block = "10.0.0.0/16"
+
+  enable_dns_support = true
+
+  enable_dns_hostnames = true
+
+  tags = {
+
+    Name = "DevOps-VPC"
+
+  }
+}
+```
+
+---
+
+# Terraform EC2
+
+```hcl
+resource "aws_instance" "web" {
+
+  ami = "ami-xxxxxxxx"
+
+  instance_type = "t3.micro"
+
+  subnet_id = aws_subnet.public.id
+
+  tags = {
+
+    Name = "DevOps-Web"
+
+  }
+}
+```
+
+---
+
+# Terraform S3
+
+```hcl
+resource "aws_s3_bucket" "bucket" {
+
+  bucket = "devops-project-bucket"
+
+}
+```
+
+---
+
+# Terraform RDS
+
+```hcl
+resource "aws_db_instance" "mysql" {
+
+  allocated_storage = 20
+
+  engine = "mysql"
+
+  instance_class = "db.t3.micro"
+
+  username = "admin"
+
+  password = "password123"
+
+  skip_final_snapshot = true
+}
+```
+
+---
+
+# Ansible Playbook
+
+```yaml
+---
+- hosts: all
+
+  become: yes
+
+  tasks:
+
+  - name: Install Nginx
+
+    yum:
+
+      name: nginx
+
+      state: present
+
+  - name: Start Nginx
+
+    service:
+
+      name: nginx
+
+      state: started
+```
+
+---
+
+# Jenkins Pipeline
+
+```groovy
+pipeline {
+
+    agent any
+
+    stages {
+
+        stage('Git Pull') {
+
+            steps {
+
+                git 'https://github.com/company/repo.git'
+
+            }
+        }
+
+        stage('Build') {
+
+            steps {
+
+                sh 'docker build -t devops-app .'
+
+            }
+        }
+
+        stage('Deploy') {
+
+            steps {
+
+                sh 'kubectl apply -f kubernetes/'
+            }
+        }
+    }
+}
+```
+
+---
+
+# Bash Backup Script
+
+```bash
+#!/bin/bash
+
+DATE=$(date +%F)
+
+aws s3 cp \
+/backup/db.sql \
+s3://devops-backup/$DATE/
+```
+
+---
+
+# Python Monitoring Script
+
+```python
+import psutil
+
+cpu = psutil.cpu_percent()
+
+memory = psutil.virtual_memory().percent
+
+disk = psutil.disk_usage('/').percent
+
+print("CPU:", cpu)
+
+print("Memory:", memory)
+
+print("Disk:", disk)
+```
+
+---
+
+# Prometheus Configuration
+
+```yaml
+global:
+
+  scrape_interval: 15s
+
+scrape_configs:
+
+- job_name: node
+
+  static_configs:
+
+  - targets:
+    - localhost:9100
+```
+
+---
+
+# Grafana Dashboard
+
+Metrics:
+
+```text
+CPU Usage
+Memory Usage
+Disk Usage
+Network Usage
+Pod Health
+EC2 Health
+RDS Health
+```
+
+---
+
+# CloudWatch Alarm
+
+```bash
+aws cloudwatch put-metric-alarm \
+--alarm-name CPUHigh \
+--metric-name CPUUtilization \
+--namespace AWS/EC2 \
+--statistic Average \
+--period 300 \
+--threshold 80 \
+--comparison-operator GreaterThanThreshold
+```
+
+---
+
+# Lambda Function
+
+```python
+import json
+
+def lambda_handler(event, context):
+
+    return {
+
+        "statusCode": 200,
+
+        "body": json.dumps(
+            "Lambda Success"
+        )
+    }
+```
+
+---
+
+# SNS Notification
+
+```bash
+aws sns publish \
+--topic-arn arn:aws:sns:region:id:alerts \
+--message "Server Down"
+```
+
+---
+
+# SQL Table
+
+```sql
+CREATE TABLE employees(
+
+id INT PRIMARY KEY,
+
+name VARCHAR(100),
+
+department VARCHAR(50),
+
+salary DECIMAL(10,2)
+
+);
+```
+
+---
+
+# Git Commands
+
+```bash
+git init
+
+git add .
+
+git commit -m "Initial Commit"
+
+git push origin main
+```
+
+---
+
+# Linux Commands
+
+```bash
+pwd
+
+ls -la
+
+cd /
+
+cd ~
+
+cd ..
+
+cd -
+
+mkdir project
+
+rm -rf old_project
+
+cp file.txt backup.txt
+
+cat app.log
+```
+
+---
+
+# Interview Resume Points
+
+* Designed and deployed a highly available AWS infrastructure using VPC, EC2, ALB, RDS, and S3.
+* Automated infrastructure provisioning using Terraform and Ansible.
+* Implemented CI/CD pipelines using Jenkins, Docker, and Kubernetes.
+* Configured monitoring with Prometheus, Grafana, ELK Stack, and CloudWatch.
+* Developed automation scripts using Python and Bash.
+* Implemented backup, disaster recovery, and cost-optimization strategies.
+* Managed Linux servers, containers, and cloud-native workloads in production environments.
+
+
+
